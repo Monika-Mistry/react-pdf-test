@@ -1,10 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import PDFDocument from "./PDFDocument.tsx";
+import { PDFViewer } from "@react-pdf/renderer";
+import ReactDOM from "react-dom";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+// Render in DOM
+const App = () => (
+  <PDFViewer width="100%" height="900px">
+    <PDFDocument />
+  </PDFViewer>
+);
+
+ReactDOM.render(<App />, document.getElementById("root"));
